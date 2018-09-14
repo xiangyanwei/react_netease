@@ -10,11 +10,12 @@ import Matter from './containers/matter/matter' ;
 import Category from './containers/category/category' ;
 import ShopCart from './containers/shopCart/shopCart' ;
 import Profile from './containers/profile/profile' ;
+import Login from './components/login/login';
 import store from './store';
 class App extends Component{
 
+
   render(){
-    console.log(store);
     return (
         <div>
           <Provider store={store}>
@@ -26,7 +27,8 @@ class App extends Component{
                   <Route path='/category' component={Category}/>
                   <Route path='/shop' component={ShopCart}/>
                   <Route path='/profile' component={Profile}/>
-                  <Redirect push to= '/main'/>
+                  <Route path= '/login' component={Login}/>
+                  <Redirect  to= '/main'/>
                 </Switch>
                 <FooterGuide/>
               </div>

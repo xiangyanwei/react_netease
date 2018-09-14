@@ -8,18 +8,22 @@ class Popular extends Component{
     popularItemNewUserList: PropTypes.array.isRequired
   }
 
-  componentDidUpdate(){
-    this._initSlideItem(this.slide) ;
-    this._initSlideItem(this.slideOne) ;
-    new BScroll('.slide_wrapper', {
-      scrollX: true,
-      click: true
-    })
-    new BScroll('#slide_once', {
-      scrollX: true,
-      click: true
-    })
-  }
+  componentDidMount(){
+    if(!this.BS || !this.BSTwo){
+      this._initSlideItem(this.slide) ;
+      this._initSlideItem(this.slideOne) ;
+      this.BS = new BScroll('.slide_wrapper', {
+        scrollX: true,
+        click: true
+      })
+      this.BSTwo = new BScroll('#slide_once', {
+        scrollX: true,
+        click: true
+      })
+      console.log(11111);
+    }
+    }
+
 
   _initSlideItem(el){
     const slide = el ;//this.$refs.slide_item ;

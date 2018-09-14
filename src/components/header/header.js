@@ -15,7 +15,7 @@ class Header extends Component{
           <i className="iconfont icon-shouye-1"/>
         </div>
         <div className="logo">
-          <img src="//yanxuan.nosdn.127.net/bd139d2c42205f749cd4ab78fa3d6c60.png"/>
+          <img src="//yanxuan.nosdn.127.net/bd139d2c42205f749cd4ab78fa3d6c60.png" alt='pic'/>
         </div>
         <div className="right_icon">
           <span>

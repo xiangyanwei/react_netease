@@ -10,11 +10,9 @@ class FooterGuide extends Component{
   }
   render(){
     let path = this.props.location.pathname ;
-
     return (
-
       <div className="footer_wrapper"
-           style={{display: (path === '/profile') ? 'none' : '' }}>
+           style={{display: (path === '/profile' || path ==='/login') ? 'none' : '' }}>
         <span className={(path === '/main') ? 'tab_wrapper on': 'tab_wrapper'} onClick={()=>this.skipPath('main')}>
           <span className="icon">
             <i className="iconfont icon-shouye-1"/>

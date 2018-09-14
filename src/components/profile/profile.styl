@@ -1,0 +1,67 @@
+@import "../../reset/css/mixin.styl";
+.profile_content
+  position relative
+  height (1246/$rem)
+  .netease_select
+    width (375*2/$rem)
+    height (45*2/$rem)
+    padding (80*2/$rem) 0
+    text-align center
+    img
+      width (134*2/$rem)
+      height (45*2/$rem)
+  .login_wrapper
+    display flex
+    flex-direction column
+    align-items center
+    font-size (32/$rem)
+    .phone_login
+      width (335*2/$rem)
+      height (46*2/$rem)
+      background-color  darkred
+      color white
+      display flex
+      justify-content center
+      align-items center
+      border-radius (10/$rem)
+      margin-bottom (32/$rem)
+      span
+        font-size (32/$rem)
+        .icon-shouji
+          font-size (50/$rem)
+    .mail_login
+      width (335*2/$rem)
+      height (46*2/$rem)
+      display flex
+      justify-content center
+      align-items center
+      border-radius (10/$rem)
+      margin-bottom (32/$rem)
+      border 1px solid darkred
+      span
+        color darkred
+        font-size (32/$rem)
+        .icon-youxiang
+          font-size (50/$rem)
+          color darkred
+
+  .login_way
+    display flex
+    justify-content center
+    position absolute
+    width 100%
+    left 0
+    bottom (150/$rem)
+    font-size (32/$rem)
+    color #666
+    .login_icon
+      display flex
+      align-items center
+      padding (4/$rem) (30/$rem)
+      &:nth-child(2)
+        border-right 1px solid #666
+        border-left 1px solid #666
+      span
+        .iconfont
+          color #666
+          font-size (40/$rem)

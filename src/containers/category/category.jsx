@@ -6,20 +6,26 @@ import {withRouter} from 'react-router-dom' ;
 import RightNav from '../../components/category/rightNav';
 import './css/category.styl';
 
+import { receiveCategoryMsg} from '../../store/actions';
+
 class Category extends Component{
 
   state = {
     currentIndex : 0
+  }
+  componentWillMount(){
+    this.props. receiveCategoryMsg() ;
   }
   componentDidUpdate(){
     if(!this.BS){
       this.BS = new BScroll('.left_display_wrapper', {
         click: true
       })
+      this.left_nav.children[0].className= 'left_display_item active' ;
     }
   }
   componentDidMount(){
-    this.left_nav.children[0].className= 'left_display_item active' ;
+
   }
   select = (event)=>{
     Array.from(this.left_nav.children).forEach((item, index)=>{
@@ -33,7 +39,6 @@ class Category extends Component{
   }
   render(){
     const {categoryMsg} = this.props.home ;
-    console.log(categoryMsg);
     if(!categoryMsg.categoryL1List){
       return (
           <div>loading</div>
@@ -73,5 +78,6 @@ class Category extends Component{
 }
 withRouter(Category) ;
 export default connect(
-    state => ({home: state.home})
+    state => ({home: state.home}),
+    { receiveCategoryMsg}
 )(Category) ;

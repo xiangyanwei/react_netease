@@ -7,11 +7,13 @@ class Special extends Component{
     topicList: PropTypes.array.isRequired
   }
   componentDidMount(){
-    this._initSlideItem(this.subject) ;
-    new BScroll('.subject_list_wrapper',{
-      click: true,
-      scrollX: true
-    })
+    if(!this.BS){
+      this._initSlideItem(this.subject) ;
+      this.BS = new BScroll('.subject_list_wrapper',{
+        click: true,
+        scrollX: true
+      })
+    }
   }
   _initSlideItem(el){
     const slide = el ;//this.$refs.slide_item ;

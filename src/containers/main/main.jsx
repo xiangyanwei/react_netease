@@ -2,7 +2,7 @@ import React, {Component} from 'react' ;
 import {connect} from 'react-redux' ;
 import BScroll from 'better-scroll' ;
 
-import {receiveHomeData, receiveCategoryMsg} from '../../store/actions';
+import {receiveHomeData} from '../../store/actions';
 import './css/main.styl';
 
 
@@ -22,14 +22,15 @@ class Main extends Component{
   }
   componentWillMount(){
     this.props.receiveHomeData() ;
-    this.props.receiveCategoryMsg() ;
   }
   componentDidUpdate(){
-    this._initUlWidth() ;
-    new BScroll('.main_scroll_wrapper',{
-      click: true,
-    })
-    this.navUl.children[0].className = 'tab_item on'
+    if(!this.BS){
+      this._initUlWidth() ;
+      this.BS = new BScroll('.main_scroll_wrapper',{
+        click: true,
+      })
+      this.navUl.children[0].className = 'tab_item on';
+    }
   }
   _initUlWidth(){
     const ul = this.navUl ;
@@ -121,5 +122,5 @@ class Main extends Component{
 
 export default connect(
     state => ({home: state.home}),
-    {receiveHomeData, receiveCategoryMsg}
+    {receiveHomeData}
 )(Main)
