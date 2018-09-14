@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <title>React App</title>
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_834655_txwyux1h6g.css">
+</head>
+<body>
+<div id="root"></div>
+</body>
+<script type="text/javaScript">
+  !(function(){
+    const width = document.documentElement.clientWidth ;    //head中设置了meta标签后，获取宽度
+    const dpr = window.devicePixelRatio ;    //获取像素比
+    const scale = 1/dpr ;                    //获得系统缩放的比例
+    const style = document.createElement("style") ;    //创建style标签
+    const metaNode = document.querySelector( 'meta[name="viewport"]' ) ;    //使用属性选择器
+    metaNode.setAttribute("content" ,"initial-scale="+scale+",user-scalable=no"); //设置系统缩放
+    style.innerHTML = "html{font-size:"+width/16*dpr+"px !important;}" ;//因为系统缩放了，整个页面宽度其实已经被放大，所以此时需要将被缩放比例乘回来（width的获取若是在系统缩放下面，那么可以不用再乘缩放比例）
+    document.head.appendChild(style) ;
+  })();
+</script>
+</html>

@@ -1,0 +1,19 @@
+$rem = 750/16rem
+clearFix()
+  zoom 1
+  &::after
+    content ''
+    height 0
+    clear both
+    display block
+no_wrap()
+  white-space nowrap
+  overflow hidden
+  text-overflow ellipsis
+middle()
+  position absolute
+  top 0
+  left 0
+  right 0
+  bottom 0
+  margin auto

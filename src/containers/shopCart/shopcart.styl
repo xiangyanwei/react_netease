@@ -1,0 +1,61 @@
+@import "../../reset/css/mixin.styl";
+.shop_cart
+  background-color #eee
+  height (1334/$rem)
+  .shop_cart_header
+    background-color white
+    padding 0 (20/$rem)
+    height (88/$rem)
+    text-align center
+    font-size (32/$rem)
+    line-height (88/$rem)
+    .shop_cart_ticket
+      float right
+      margin-left -(80/$rem)
+      margin-right (20/$rem)
+      color darkred
+  .shop_cart_content
+    height (1176/$rem)
+    position relative
+    .quality_guarantee
+      display flex
+      height (70/$rem)
+      .quality_guarantee_item
+        font-size (24/$rem)
+        line-height (70/$rem)
+        flex 1
+        text-align center
+        position relative
+        &::before
+          content ''
+          position absolute
+          top (30/$rem)
+          left (35/$rem)
+          width (10/$rem)
+          height (10/$rem)
+          background url('//yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/servicePolicy-1d7541974f.png')
+    .login_shop_cart
+      middle()
+      display flex
+      flex-direction column
+      align-items center
+      justify-content center
+      width (750/$rem)
+      height (470/$rem)
+      color #999
+      text-align center
+      .cart
+        width (248/$rem)
+        height (248/$rem)
+      .add
+        margin-top  -(20/$rem)
+        font-size (28/$rem)
+      .login
+        width (480/$rem)
+        height (90/$rem)
+        background-color darkred
+        text-align center
+        font-size (32/$rem)
+        line-height (90/$rem)
+        margin-top (40/$rem)
+        color white
